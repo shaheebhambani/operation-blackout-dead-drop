@@ -1,0 +1,43 @@
+{
+  "teams": [
+    "TEAM-01",
+    "TEAM-02",
+    "TEAM-03",
+    "TEAM-04",
+    "TEAM-05",
+    "TEAM-06",
+    "TEAM-07",
+    "TEAM-08",
+    "TEAM-09",
+    "TEAM-10",
+    "TEAM-11",
+    "TEAM-12",
+    "TEAM-13",
+    "TEAM-14",
+    "TEAM-15",
+    "TEAM-16",
+    "TEAM-17",
+    "TEAM-18",
+    "TEAM-19",
+    "TEAM-20"
+  ],
+  "sessions": {
+    "TEAM-01": {
+      "team_id": "TEAM-01",
+      "created_at": 1791394923993,
+      "completed_at": 1791395008074,
+      "countdown_start": 1791395008074
+    }
+  },
+  "clearance_codes": {
+    "TEAM-01": {
+      "team_id": "TEAM-01",
+      "code": "BLK-EMM3-AF",
+      "room_number": "204",
+      "created_at": 1791395008074,
+      "verified_at": null,
+      "status": "READY"
+    }
+  },
+  "admin_verifications": []
+}

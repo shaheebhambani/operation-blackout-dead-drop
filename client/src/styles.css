@@ -1,0 +1,35 @@
+:root{--g:#00ff88;--r:#ff3b4f;--bg:#000403;--w:#e7f5ef}
+*{box-sizing:border-box}html,body,#root{height:100%;margin:0;background:var(--bg);color:var(--g);font-family:'Courier New',monospace}
+.app{position:fixed;inset:0;overflow:hidden;transition:color 1.5s}.app.red{--g:var(--r)}
+.rain{position:absolute;inset:0;opacity:.55}
+.scan{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px)}
+.vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 35%,rgba(0,0,0,.85) 100%)}
+main{position:absolute;inset:0;display:grid;place-items:center;padding:20px;padding-top:calc(20px + env(safe-area-inset-top));overflow:auto}
+.scene{position:relative;width:min(900px,100%);text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center;text-shadow:0 0 12px currentColor}
+.ln{opacity:0;animation:in .5s forwards;font-size:clamp(14px,3.6vw,20px);white-space:pre-line;letter-spacing:.08em;color:var(--w)}
+.ln.big{font-size:clamp(28px,8vw,64px);font-weight:700;color:var(--g);line-height:1.1}
+.ln.red{color:var(--r)}.ln.big.red{font-size:clamp(26px,7.5vw,60px)}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.bar{width:min(420px,80%);height:14px;border:1px solid var(--g);opacity:0;animation:in .3s forwards}
+.bar i{display:block;height:100%;width:0;background:var(--g);animation:fill 1.6s forwards}
+@keyframes fill{to{width:100%}}
+.glitch{animation:shake .25s infinite}.glitch .ln{text-shadow:2px 0 var(--r),-2px 0 #0ff}
+@keyframes shake{0%{transform:translate(0)}25%{transform:translate(-4px,2px)}50%{transform:translate(3px,-2px)}75%{transform:translate(-2px,-3px)}100%{transform:translate(0)}}
+.scare{position:fixed;inset:0;display:grid;place-items:center;background:#000;animation:flash 1.3s forwards}
+.scare img{position:absolute;width:100%;height:100%;object-fit:cover;animation:zoom 1.3s forwards;filter:contrast(1.3) saturate(1.4)}
+.silhouette{position:absolute;width:60vmin;height:80vmin;border-radius:50% 50% 12% 12%;background:radial-gradient(circle at 50% 38%,#000 0 22%,#031815 23% 60%,transparent 61%);box-shadow:0 0 120px 40px rgba(0,255,136,.25);animation:zoom 1.3s forwards}
+@keyframes zoom{0%{transform:scale(.7)}100%{transform:scale(1.6)}}
+@keyframes flash{0%,10%{background:#fff}20%{background:#000}35%{background:var(--r)}50%,100%{background:#000}}
+.room{font-size:clamp(40px,13vw,110px);font-weight:700;color:var(--w);letter-spacing:.06em}.room.locked{color:var(--g);text-shadow:0 0 30px var(--g)}
+.timer{font-size:clamp(44px,14vw,96px);font-weight:700;color:var(--w);animation:pulse 2s infinite}.timer.hot{animation:pulse .5s infinite;color:var(--r)}
+.final.warn .timer,.final.warn .room{color:var(--r)}
+.pulse{animation:pulse 1.2s infinite}@keyframes pulse{50%{opacity:.4}}
+.card{border:2px solid var(--g);padding:18px 22px;width:min(420px,100%);background:rgba(2,17,14,.85);display:flex;flex-direction:column;gap:8px;margin:8px 0 30px;letter-spacing:.15em}
+.card .code{font-size:clamp(32px,10vw,52px);font-weight:700;color:var(--w);letter-spacing:.12em}.card .sm{font-size:13px;opacity:.85}.ok{color:var(--g)}
+input{background:#02110e;border:1px solid var(--g);color:var(--w);padding:14px;font:inherit;font-size:18px;text-align:center;width:min(320px,100%);text-transform:uppercase}
+.btn,.admin button{background:transparent;border:1px solid var(--g);color:var(--g);padding:12px 22px;font:inherit;cursor:pointer;letter-spacing:.15em;margin:4px}
+.btn:disabled{opacity:.35}.btn:hover,.admin button:hover{background:var(--g);color:#000}
+.mute{position:absolute;top:calc(10px + env(safe-area-inset-top));right:10px;z-index:5;background:none;border:0;font-size:18px;opacity:.6;cursor:pointer}
+.admin{position:fixed;inset:0;padding:20px;color:var(--g);overflow:auto;background:var(--bg)}.admin .red{color:var(--r)}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%}th,td{border:1px solid #0a5c4a;padding:6px 10px;text-align:left;font-size:14px;color:var(--w)}
+@media (prefers-reduced-motion:reduce){.glitch,.timer,.pulse{animation:none}}
